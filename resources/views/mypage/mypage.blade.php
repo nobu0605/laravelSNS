@@ -28,20 +28,20 @@
       <a href="/mypage?id={{$contents[0]['user_id']}}">
         <img style="height:13vw;width: 13vw;" src="img/{{$contents[0]['image']}}" alt="">
       </a>
-      <br></br> 
+      <br></br>
   @else
   	<p>※ログインしていません。（<a href="/login">ログイン</a>｜<a href="/register">登録</a>）</p>
   @endif
 
   <div class="contents_wrapper">
     @foreach ($contents as $content)
-      <div class="table_body col-md-4 col-xs-12"> 
+      <div style="height:50%" class="table_body col-md-4 col-xs-12">
         <h4>{{$content['name']}}</h4>
         <div class="content_body">
           <a href="/mypage?id={{$content['user_id']}}">
             <img class="profile_img" src="img/{{$content['image']}}">
           </a>
-          <img class="post_image" src="img/{{$content['post_image']}}">  
+          <img class="post_image" src="img/{{$content['post_image']}}">
           <span class="content_post">{{$content['content']}}</span>
         </div>
 
@@ -56,13 +56,13 @@
           <div class="class{{ $content['id'] }}" data-like="{{ $content['like_count'] }}">
             <div>
               <a
-                href="#" 
-                id="{{ $content['id'] }}" 
+                href="#"
+                id="{{ $content['id'] }}"
                 class="like {{like_check($content['id']) ? 'up' : ''}}"
               >
                 <i style="color:#ff69b4;" class="{{like_check($content['id']) ? 'fas' : 'far'}} fa-heart"></i>
-                <p 
-                  class="like_count show" 
+                <p
+                  class="like_count show"
                   style="display:{{ like_count_check($content['like_count']) }} color:#ff69b4;"
                 >
                   &nbsp;({{ $content['like_count'] }})
@@ -74,7 +74,7 @@
         </div>
       </div>
     @endforeach
-  </div>  
+  </div>
   {{$contents->links()}}
 @endsection
 

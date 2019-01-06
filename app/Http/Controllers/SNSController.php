@@ -25,7 +25,7 @@ class SNSController extends Controller
     View::share('user', $user);
     $comments = Comment::all();
 
-    $contents = 
+    $contents =
       Content::leftjoin('users','contents.user_id','=','users.id')
       ->select('users.*',
         'contents.id',
@@ -37,7 +37,7 @@ class SNSController extends Controller
       ->orderBy('contents.id', 'desc')
       ->paginate(9);
 
-    $contents_simple = 
+    $contents_simple =
       Content::leftjoin('users','contents.user_id','=','users.id')
       ->orderBy('contents.id', 'desc')
       ->simplePaginate(9);
@@ -61,9 +61,9 @@ class SNSController extends Controller
   {
     $request->validate(['content' => 'required|max:255']);
     $image_data = empty($request->image) ? "" : $request->image->hashName();
-    
+
     $param = [
-      'user_id' => $request->user_id,            
+      'user_id' => $request->user_id,
       'content' => $request->content,
       'image' => $image_data,
     ];
