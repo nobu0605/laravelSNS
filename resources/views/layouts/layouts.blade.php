@@ -13,12 +13,12 @@
 <body>
     @section('menubar')
     <div class="header">
-    	<a href="/tweet"><h1>Laravel</h1></a>
+    	<a href="/tweet"><h1>BookSNS</h1></a>
         @if (Auth::check())
             <div id="header_right">
                 <p>{{$user->name}} <span> ▼</span></p>
             </div>
-        @else       
+        @else
         @endif
     </div>
     <div class="header_list">

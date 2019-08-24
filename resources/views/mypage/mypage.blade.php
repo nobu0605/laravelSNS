@@ -17,7 +17,7 @@
 @endphp
 
 @extends('layouts.layouts')
-@section('title', 'Laravel')
+@section('title', 'BookSNS')
 @section('menubar')
     @parent
 @endsection

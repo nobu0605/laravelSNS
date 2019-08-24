@@ -1,10 +1,10 @@
 @extends('layouts.layouts')
 
-@section('title', 'Laravel')
+@section('title', 'BookSNS')
 
 @section('menubar')
     @parent
-   
+
 @endsection
 
 @section('content')
@@ -13,9 +13,9 @@
             <div class="row">
               <div class="col-sm-12 mt-5">
                 <div class="blog-post">
- 
+
                   @foreach ($posts as $post)
- 
+
                   <div class="card mt-5">
                     <h3 class="card-header"><a href="#">{{ $post->title }}</a></h3>
                     <div class="card-body">
@@ -44,15 +44,15 @@
                       </div>
                     </div>
                   </div>
- 
+
                   @endforeach
- 
+
             </div>
           </div>
         </div>
       </div>
     </div>
- 
+
 @endsection
 
 @section('footer')

@@ -1,10 +1,10 @@
 @extends('layouts.layouts')
 
-@section('title', 'Twitter')
+@section('title', 'BookSNS')
 
 @section('menubar')
     @parent
-   
+
 @endsection
 
 @section('content')
